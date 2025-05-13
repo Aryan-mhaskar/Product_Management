@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wireframe Product Details - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Box -->
+  <div id="loginBox" class="login-box">
+    <h2>Wireframe Product Details</h2>
+    <form onsubmit="return loginUser()">
+      <label for="username">User Name:</label>
+      <input type="text" id="username" value="Admin" required><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required><br>
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <!-- Product Management Section -->
+  <div id="productSection" style="display: none;">
+    <h2>Product Management</h2>
+    <a href="#" onclick="showAddProduct()">Add New Item</a>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Brand Name</th>
+          <th>Country</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P000101</td>
+          <td>Redmi 11 Note</td>
+          <td>Redmi</td>
+          <td>India</td>
+          <td><img src="https://vlebazaar.in/image/cache/wp/gj/B09QS8V5N8/Redmi-Note-11-Space-Black-4GB-RAM-64GB-Storage90Hz-FHD-AMOLED-Display--Qualcomm--800x800.webp" width="40"></td>
+          <td>18000</td>
+          <td>
+            <a href="#" onclick="editRow(this)">Edit</a> |
+            <a href="#" onclick="deleteRow(this)">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td>P000102</td>
+          <td>Realme 9</td>
+          <td>Realme</td>
+          <td>China</td>
+          <td><img src=https://www.jiomart.com/images/product/original/492849952/realme-9-128gb-6gb-ram-sunburst-gold-mobile-phone-digital-o492849952-p591868242-0-202208291509.jpeg?im=Resize=(1000,1000) width="40"></td>
+          <td>21000</td>
+          <td>
+            <a href="#" onclick="editRow(this)">Edit</a> |
+          <a href="#" onclick="deleteRow(this)">Delete</a>
+          </td>
+          
+        </tr>
+        <tr>
+          <td>P000103</td>
+          <td>Nokia N12</td>
+          <td>Nokia</td>
+          <td>Japan</td>
+          <td><img src="https://images.gizbot.com/ta/files/2011/11/nokia-n12-300.jpg" width="40"></td>
+          <td>15000</td>
+          <td>
+            <a href="#" onclick="editRow(this)">Edit</a> |
+            <a href="#" onclick="deleteRow(this)">Delete</a>
+          </td>
+          
+        </tr>
+        <tr>
+          <td>P000104</td>
+          <td>Samsung S31</td>
+          <td>Samsung</td>
+          <td>Korea</td>
+          <td><img src="https://specificationsplus.com/wp-content/uploads/2022/12/Samsung-Galaxy-S31-Plus-Specifications-Plus.jpg" width="40"></td>
+          <td>19500</td>
+          <td>
+            <a href="#" onclick="editRow(this)">Edit</a> |
+            <a href="#" onclick="deleteRow(this)">Delete</a>
+          </td>
+          
+        </tr>
+        <tr>
+          <td>P000105</td>
+          <td>Vivi Y12</td>
+          <td>Vivo</td>
+          <td>China</td>
+          <td><img src="https://m.media-amazon.com/images/I/51320C1CrsL._SX679_.jpg" width="40"></td>
+          <td>12000</td>
+          <td>
+            <a href="#" onclick="editRow(this)">Edit</a> |
+            <a href="#" onclick="deleteRow(this)">Delete</a>
+          </td>
+          
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+<!-- Add Product Section -->
+<div id="addProductSection" style="display: none;">
+  <h2>Add New Product</h2>
+  <form id="productForm" onsubmit="return submitProduct(event)">
+    <label>Product Name:</label><br>
+    <input type="text" id="newProductName" required><br>
+
+    <label>Brand Name:</label><br>
+    <input type="text" id="newBrandName" required><br>
+
+    <label>Country:</label><br>
+    <input type="text" id="newCountry" required><br>
+
+    <label>Price:</label><br>
+    <input type="number" id="newPrice" required><br>
+
+    <label>Product Image:</label><br>
+    <input type="file" id="newImage" accept="image/*"><br><br>
+
+    <button type="submit" style="background-color: royalblue; color: white;">Submit</button>
+    <button type="reset" style="background-color: orange; color: white;">Reset</button>
+    <button type="button" onclick="goToGrid()" style="background-color: orangered; color: white;">Go to Grid</button>
+  </form>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
